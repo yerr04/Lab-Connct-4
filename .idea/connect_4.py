@@ -50,22 +50,22 @@ def main():
     # Game loop
     while True:
         # Player 1
-        p1_input = int(input("Player 1: Which column would you like to choose?:"))
-        insert_chip(board, p1_input - 1, "x")
+        p1_input = int(input("Player 1: Which column would you like to choose?: "))
+        row = insert_chip(board, p1_input - 1, "x")
         print_board(board)
         p1_input = p1_input - 1
         # Check if player 1 won
-        if check_if_winner(board, p1_input, insert_chip(board, p1_input, "x"), "x"):
+        if check_if_winner(board, p1_input, row, "x"):
             print("Player 1 won!")
             break
 
         # Player 2
-        p2_input = int(input("Player 2: Which column would you like to choose?" ))
-        insert_chip(board, p2_input - 1, "o")
+        p2_input = int(input("Player 2: Which column would you like to choose?: " ))
+        row2 = insert_chip(board, p2_input - 1, "o")
         print_board(board)
 
         # Check if player 2 won
-        if check_if_winner(board, p2_input, insert_chip(board, p2_input, "o"), "o"):
+        if check_if_winner(board, p2_input, row2, "o"):
             print("Player 2 won!")
             break
 
